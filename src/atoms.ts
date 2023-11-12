@@ -5,8 +5,13 @@ import { Message } from "./App";
 export const ApikeyAtom = atom<string>("");
 
 const APIURL = "https://api.openai.com/v1/chat/completions";
-export const ModelsList = ["gpt-3.5-turbo", "gpt-4", "gpt-4-32k"] as const;
-export type Models = typeof ModelsList[number];
+export const ModelsList = [
+  "gpt-3.5-turbo",
+  "gpt-4",
+  "gpt-4-32k",
+  "gpt-4-1106-preview",
+] as const;
+export type Models = (typeof ModelsList)[number];
 
 // export const ApikeyAtom = atom<string>("");
 export const MessagesAtom = atom<Message[]>([]);
